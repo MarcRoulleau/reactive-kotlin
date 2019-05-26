@@ -1,9 +1,9 @@
-package com.lvlstudio.observable
+package com.reactive.observable
 
-import com.lvlstudio.disposable.Disposable
-import com.lvlstudio.obervers.ObserverSubscribe
-import com.lvlstudio.observable.operators.SelectObservable
-import com.lvlstudio.observable.operators.WhereObservable
+import com.reactive.disposable.Disposable
+import com.reactive.obervers.ObserverSubscribe
+import com.reactive.observable.operators.SelectObservable
+import com.reactive.observable.operators.WhereObservable
 import java.lang.Exception
 
 fun <T> IObservable<T>.subscribe() : Disposable{

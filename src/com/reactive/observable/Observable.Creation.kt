@@ -1,10 +1,10 @@
-package com.lvlstudio.observable
+package com.reactive.observable
 
-import com.lvlstudio.disposable.Disposable
-import com.lvlstudio.obervers.IObserver
-import com.lvlstudio.observable.operators.CreateObservable
-import com.lvlstudio.observable.operators.DeferObservable
-import com.lvlstudio.observable.operators.Generate
+import com.reactive.disposable.Disposable
+import com.reactive.obervers.IObserver
+import com.reactive.observable.operators.CreateObservable
+import com.reactive.observable.operators.DeferObservable
+import com.reactive.observable.operators.Generate
 
 class Observable {
     companion object {

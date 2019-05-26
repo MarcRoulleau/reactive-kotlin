@@ -1,4 +1,4 @@
-package com.lvlstudio.disposable
+package com.reactive.disposable
 
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock

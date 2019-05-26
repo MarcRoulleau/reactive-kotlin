@@ -1,6 +1,6 @@
-package com.lvlstudio
+package com.reactive
 
-import com.lvlstudio.disposable.Disposable
+import com.reactive.disposable.Disposable
 import java.time.Duration
 
 class ImmediateScheduler<TState> : IScheduler<TState> {

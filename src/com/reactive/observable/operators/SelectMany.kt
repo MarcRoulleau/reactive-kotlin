@@ -1,10 +1,10 @@
-package com.lvlstudio.observable.operators
+package com.reactive.observable.operators
 
-import com.lvlstudio.disposable.CompositeDisposable
-import com.lvlstudio.disposable.Disposable
-import com.lvlstudio.disposable.SingleAssignmentDisposable
-import com.lvlstudio.obervers.IObserver
-import com.lvlstudio.observable.IObservable
+import com.reactive.disposable.CompositeDisposable
+import com.reactive.disposable.Disposable
+import com.reactive.disposable.SingleAssignmentDisposable
+import com.reactive.obervers.IObserver
+import com.reactive.observable.IObservable
 import java.lang.Exception
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock

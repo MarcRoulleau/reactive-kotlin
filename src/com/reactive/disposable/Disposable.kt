@@ -1,4 +1,4 @@
-package com.lvlstudio.disposable
+package com.reactive.disposable
 
 
 interface Disposable {

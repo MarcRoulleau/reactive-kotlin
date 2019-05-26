@@ -1,4 +1,4 @@
-package com.lvlstudio.obervers
+package com.reactive.obervers
 
 class ObserverSubscribe<T>: IObserver<T> {
 

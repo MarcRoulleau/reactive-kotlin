@@ -1,8 +1,8 @@
-package com.lvlstudio.observable.operators
+package com.reactive.observable.operators
 
-import com.lvlstudio.disposable.Disposable
-import com.lvlstudio.obervers.EmptyObserver
-import com.lvlstudio.obervers.IObserver
+import com.reactive.disposable.Disposable
+import com.reactive.obervers.EmptyObserver
+import com.reactive.obervers.IObserver
 import java.lang.Exception
 
 abstract class OperatorObserverBase<TSource, TResult>: IObserver<TSource>, Disposable {
