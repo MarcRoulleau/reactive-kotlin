@@ -3,7 +3,7 @@ package com.reactive.observable.operators
 import com.reactive.disposable.CompositeDisposable
 import com.reactive.disposable.Disposable
 import com.reactive.disposable.SingleAssignmentDisposable
-import com.reactive.obervers.IObserver
+import com.reactive.observers.IObserver
 import com.reactive.observable.IObservable
 import java.lang.Exception
 import java.util.concurrent.locks.ReentrantLock

@@ -1,4 +1,4 @@
-package com.reactive.obervers
+package com.reactive.observers
 
 import java.lang.Exception
 

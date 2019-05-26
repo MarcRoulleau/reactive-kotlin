@@ -1,7 +1,7 @@
 package com.reactive.observable
 
 import com.reactive.disposable.Disposable
-import com.reactive.obervers.ObserverSubscribe
+import com.reactive.observers.ObserverSubscribe
 import com.reactive.observable.operators.SelectObservable
 import com.reactive.observable.operators.WhereObservable
 import java.lang.Exception

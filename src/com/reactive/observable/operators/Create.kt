@@ -1,7 +1,7 @@
 package com.reactive.observable.operators
 
 import com.reactive.disposable.Disposable
-import com.reactive.obervers.IObserver
+import com.reactive.observers.IObserver
 import com.reactive.observable.IObservable
 import java.lang.Exception
 

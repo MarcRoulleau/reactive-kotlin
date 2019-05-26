@@ -1,4 +1,4 @@
-package com.reactive.obervers
+package com.reactive.observers
 
 class ObserverSubscribe<T>: IObserver<T> {
 

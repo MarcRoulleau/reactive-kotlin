@@ -1,8 +1,8 @@
 package com.reactive.observable.operators
 
 import com.reactive.disposable.Disposable
-import com.reactive.obervers.EmptyObserver
-import com.reactive.obervers.IObserver
+import com.reactive.observers.EmptyObserver
+import com.reactive.observers.IObserver
 import java.lang.Exception
 
 abstract class OperatorObserverBase<TSource, TResult>: IObserver<TSource>, Disposable {
