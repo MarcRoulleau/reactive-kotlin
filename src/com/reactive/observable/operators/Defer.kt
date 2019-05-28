@@ -40,20 +40,12 @@ class DeferObservable<T>: IObservable<T> {
             }
         }
 
-        override fun onComplete() {
-            try {
-                _observer.onComplete()
-            } finally {
-               dispose()
-            }
+        override fun onError(exception: Exception) {
+            try { observer.onError(exception) } finally { dispose() }
         }
 
-        override fun onError(exception: Exception) {
-            try {
-                _observer.onError(exception)
-            }finally {
-               dispose()
-            }
+        override fun onComplete() {
+            try { observer.onComplete() } finally { dispose() }
         }
 
     }

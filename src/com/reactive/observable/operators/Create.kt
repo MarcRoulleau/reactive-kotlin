@@ -26,20 +26,12 @@ class CreateObservable<T> : IObservable<T> {
             super.observer.onNext(value)
         }
 
-        override fun onComplete() {
-           try {
-                observer.onComplete()
-           }finally {
-               dispose()
-           }
+        override fun onError(exception: Exception) {
+            try { observer.onError(exception) } finally { dispose() }
         }
 
-        override fun onError(exception: Exception) {
-            try {
-                observer.onError(exception)
-            }finally {
-                dispose()
-            }
+        override fun onComplete() {
+            try { observer.onComplete() } finally { dispose() }
         }
 
     }
