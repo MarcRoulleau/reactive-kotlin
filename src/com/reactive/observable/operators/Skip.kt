@@ -7,8 +7,8 @@ import java.lang.Exception
 
 class SkipObservable<T> : IObservable<T> {
 
-    val source : IObservable<T>
-    val count: Int
+    private val source : IObservable<T>
+    private val count: Int
 
     constructor(source : IObservable<T>, skip: Int){
         this.source = source
