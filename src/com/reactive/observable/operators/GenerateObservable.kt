@@ -3,13 +3,14 @@ package com.reactive.observable.operators
 import com.reactive.disposable.Disposable
 import com.reactive.observers.IObserver
 import com.reactive.observable.IObservable
+import java.lang.Exception
 
-class Generate<TSource, TResult>: IObservable<TResult>
+class GenerateObservable<TSource, TResult>: IObservable<TResult>
 {
-    private var state: TSource
-    private var condition: (TSource) -> Boolean
-    private var iterate: (TSource) -> TSource
-    private var selector: (TSource) -> TResult
+    private val state: TSource
+    private val condition: (TSource) -> Boolean
+    private val iterate: (TSource) -> TSource
+    private val selector: (TSource) -> TResult
 
     constructor(state: TSource,
                 condition: (TSource) -> Boolean,
@@ -27,7 +28,7 @@ class Generate<TSource, TResult>: IObservable<TResult>
         var newState = state
         while (condition(newState)){
             newState = iterate(newState)
-            observer.OnNext(selector(newState))
+            observer.onNext(selector(newState))
         }
 
         return Disposable.empty()

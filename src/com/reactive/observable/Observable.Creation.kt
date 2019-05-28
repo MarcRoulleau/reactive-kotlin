@@ -4,7 +4,7 @@ import com.reactive.disposable.Disposable
 import com.reactive.observers.IObserver
 import com.reactive.observable.operators.CreateObservable
 import com.reactive.observable.operators.DeferObservable
-import com.reactive.observable.operators.Generate
+import com.reactive.observable.operators.GenerateObservable
 
 class Observable {
     companion object {
@@ -16,7 +16,7 @@ class Observable {
                                         iterate: (TSource) -> TSource,
                                         selector: (TSource) -> TResult): IObservable<TResult>
         {
-            return Generate(state, condition, iterate, selector)
+            return GenerateObservable(state, condition, iterate, selector)
         }
 
         fun <T> defer(subscribe: () -> IObservable<T> ): IObservable<T>{

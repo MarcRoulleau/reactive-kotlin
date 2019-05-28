@@ -10,7 +10,7 @@ class EmptyObserver<T> : IObserver<T> {
         }
     }
 
-    override fun OnNext(value: T) { }
+    override fun onNext(value: T) { }
 
     override fun onComplete() { }
 

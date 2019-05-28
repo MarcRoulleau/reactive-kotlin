@@ -30,10 +30,10 @@ class SelectObservable<TSource, TResult> : IObservable<TResult> {
                 this.parent = parent
             }
 
-            override fun OnNext(value: TSource) {
+            override fun onNext(value: TSource) {
                 try {
                     var result = this.parent.selector(value)
-                    observer.OnNext(result)
+                    observer.onNext(result)
                 }finally {
                     dispose()
                 }

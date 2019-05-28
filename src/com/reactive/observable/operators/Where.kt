@@ -35,7 +35,7 @@ class WhereObservable<T> : IObservable<T>
             _observer = observer
         }
 
-        override fun OnNext(value: T) {
+        override fun onNext(value: T) {
 
             var isPassed = false
             try {
@@ -47,7 +47,7 @@ class WhereObservable<T> : IObservable<T>
             }
 
             if(isPassed){
-                _observer.OnNext(value)
+                _observer.onNext(value)
             }
         }
 

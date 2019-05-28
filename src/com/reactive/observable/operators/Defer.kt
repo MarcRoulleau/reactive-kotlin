@@ -27,10 +27,10 @@ class DeferObservable<T>: IObservable<T> {
             _observer = observer
         }
 
-        override fun OnNext(value: T) {
+        override fun onNext(value: T) {
 
             try {
-                _observer.OnNext(value)
+                _observer.onNext(value)
             }
             catch (exception: Exception){
                 _observer.onError(exception)

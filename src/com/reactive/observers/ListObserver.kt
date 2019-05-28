@@ -15,9 +15,9 @@ class ListObserver<T> : IObserver<T> {
         return listOf(observers, observer)
     }
 
-    override fun OnNext(value: T) {
+    override fun onNext(value: T) {
         for (obs in observers){
-            obs.OnNext(value)
+            obs.onNext(value)
         }
     }
 

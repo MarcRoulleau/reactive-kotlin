@@ -15,7 +15,7 @@ abstract class OperatorObserverBase<TSource, TResult>: IObserver<TSource>, Dispo
         this.observer = observer
     }
 
-    abstract override fun OnNext(value: TSource)
+    abstract override fun onNext(value: TSource)
 
     abstract override fun onComplete()
 

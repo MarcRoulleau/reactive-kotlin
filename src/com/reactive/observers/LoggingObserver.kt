@@ -12,7 +12,7 @@ class LoggingObserver<T>: IObserver<T> {
         println("On Error called with message ${exception.message}")
     }
 
-    override fun OnNext(value: T) {
+    override fun onNext(value: T) {
         println("On Next called with value $value")
     }
 }

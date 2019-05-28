@@ -2,9 +2,9 @@ package com.reactive.observers
 
 class ObserverSubscribe<T>: IObserver<T> {
 
-    val onNext : (T) -> Unit
-    val onError : (Exception) -> Unit
-    val onComplete : () -> Unit
+    private val _onNext : (T) -> Unit
+    private val _onError : (Exception) -> Unit
+    private val _onComplete : () -> Unit
 
     companion object {
 
@@ -14,21 +14,21 @@ class ObserverSubscribe<T>: IObserver<T> {
     }
 
     constructor(onNext: (T) -> Unit, onError: (Exception) -> Unit, onComplete: () -> Unit){
-        this.onNext = onNext
-        this.onError = onError
-        this.onComplete = onComplete
+        _onNext = onNext
+        _onError = onError
+        _onComplete = onComplete
     }
 
-    override fun OnNext(value: T) {
-        onNext(value)
+    override fun onNext(value: T) {
+        _onNext(value)
     }
 
     override fun onComplete() {
-       onComplete()
+       _onComplete()
     }
 
     override fun onError(exception: Exception) {
-        onError(exception)
+        _onError(exception)
     }
 
 }

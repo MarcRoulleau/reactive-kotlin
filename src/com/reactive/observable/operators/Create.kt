@@ -22,8 +22,8 @@ class CreateObservable<T> : IObservable<T> {
     {
         constructor(parent: IObserver<T>): super(parent)
 
-        override fun OnNext(value: T) {
-            super.observer.OnNext(value)
+        override fun onNext(value: T) {
+            super.observer.onNext(value)
         }
 
         override fun onComplete() {

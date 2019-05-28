@@ -46,7 +46,7 @@ class SelectManyObservable<TSource, TResult> : IObservable<TResult> {
             return composites
         }
 
-        override fun OnNext(value: TSource) {
+        override fun onNext(value: TSource) {
 
             val observable = _parent.selector(value)
 
@@ -79,9 +79,9 @@ class SelectManyObservable<TSource, TResult> : IObservable<TResult> {
                  this.parent = parent
              }
 
-             override fun OnNext(value: TResult) {
+             override fun onNext(value: TResult) {
                  lock.withLock {
-                     this.observer.OnNext(value)
+                     this.observer.onNext(value)
                  }
              }
 

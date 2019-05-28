@@ -7,10 +7,6 @@ class ImmediateScheduler<TState> : IScheduler<TState> {
 
     override fun schedule(state: TState, duration: Duration, action: (TState) -> Disposable): Disposable {
 
-        if(action == null){
-            throw IllegalArgumentException()
-        }
-
         //Sleep for a time
         Thread.sleep(duration.toMillis())
 
