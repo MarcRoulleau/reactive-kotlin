@@ -1,6 +1,6 @@
 package com.reactive.observers
 
-class ObserverSubscribe<T>: IObserver<T> {
+class ObserverSubscribe<T>: ObserverBase<T> {
 
     private val _onNext : (T) -> Unit
     private val _onError : (Exception) -> Unit
@@ -19,15 +19,15 @@ class ObserverSubscribe<T>: IObserver<T> {
         _onComplete = onComplete
     }
 
-    override fun onNext(value: T) {
+    override fun onNextCore(value: T) {
         _onNext(value)
     }
 
-    override fun onComplete() {
+    override fun onCompleteCore() {
        _onComplete()
     }
 
-    override fun onError(exception: Exception) {
+    override fun onErrorCore(exception: Exception) {
         _onError(exception)
     }
 

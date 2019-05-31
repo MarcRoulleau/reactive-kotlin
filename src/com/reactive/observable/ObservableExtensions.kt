@@ -1,11 +1,8 @@
 package com.reactive.observable
 
 import com.reactive.disposable.Disposable
-import com.reactive.observable.operators.SelectManyObservable
+import com.reactive.observable.operators.*
 import com.reactive.observers.ObserverSubscribe
-import com.reactive.observable.operators.SelectObservable
-import com.reactive.observable.operators.SkipObservable
-import com.reactive.observable.operators.WhereObservable
 import java.lang.Exception
 
 fun <T> IObservable<T>.subscribe() : Disposable{
@@ -42,6 +39,10 @@ fun <TSource, TResult> IObservable<TSource>.selectMany(selector: (TSource)-> IOb
 
 fun <TSource> IObservable<TSource>.skip(count: Int): IObservable<TSource>{
     return SkipObservable(this, count)
+}
+
+fun <TSource> IObservable<TSource>.take(count: Int): IObservable<TSource>{
+    return TakeObservable(this, count)
 }
 
 class Stub {
