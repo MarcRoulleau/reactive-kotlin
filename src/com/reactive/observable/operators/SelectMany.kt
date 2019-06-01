@@ -29,9 +29,6 @@ class SelectManyObservable<TSource, TResult> : IObservable<TResult> {
 
         private val _parent: SelectManyObservable<TSource, TResult>
         private val composites: CompositeDisposable = CompositeDisposable()
-         //parent gate
-         //cancel disposable
-         //paremt source
 
         constructor(parent: SelectManyObservable<TSource, TResult>, observer:IObserver<TResult>): super(observer){
             _parent = parent
