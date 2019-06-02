@@ -21,31 +21,6 @@ fun <T> IObservable<T>.subscribe(onNext: (T) -> Unit, onError: (Exception) -> Un
     return this.subscribe(ObserverSubscribe.Create(onNext, onError, onComplete))
 }
 
-fun <T> IObservable<T>.where(predicate: (T) -> Boolean): IObservable<T>{
-
-    if(this is WhereObservable)
-        return this.combineWhere(predicate)
-
-    return WhereObservable(this, predicate)
-}
-
-fun <TSource, TResult> IObservable<TSource>.select(selector: (TSource) -> TResult): IObservable<TResult>{
-    return SelectObservable(this, selector)
-}
-
-fun <TSource, TResult> IObservable<TSource>.selectMany(selector: (TSource)-> IObservable<TResult>): IObservable<TResult>{
-    return SelectManyObservable(this, selector)
-}
-
-fun <TSource> IObservable<TSource>.skip(count: Int): IObservable<TSource>{
-    return SkipObservable(this, count)
-}
-
-fun <TSource> IObservable<TSource>.take(count: Int): IObservable<TSource>{
-    return TakeObservable(this, count)
-}
-
-
 class Stub {
 
     companion object {

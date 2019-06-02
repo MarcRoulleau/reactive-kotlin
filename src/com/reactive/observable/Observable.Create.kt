@@ -8,6 +8,7 @@ import com.reactive.observable.operators.GenerateObservable
 
 class Observable {
     companion object {
+
         fun <T> create(subscribe: (IObserver<T>) -> Disposable) : IObservable<T> {
             return CreateObservable(subscribe)
         }
