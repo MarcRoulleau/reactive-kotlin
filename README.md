@@ -4,16 +4,16 @@
 
 #### Concepts reimplemented in this project:
 
-* Observable contract :white_check_mark:
+* Observable contract (*Done*)
 * Operators
-    * Create (:small_blue_diamond:)
-    * Reduce (:small_blue_diamond:)
-    * Transform (:small_blue_diamond:)
+    * Create (*In Progress*)
+    * Reduce (*In Progress*)
+    * Transform (*In Progress*)
     * Inspect
 * Disposable 
-    * Serial (:small_blue_diamond:)
-    * Composite :white_check_mark:
-    * Single :white_check_mark:
+    * Serial (*In Progress*)
+    * Composite :(*Done*)
+    * Single (*Done*)
 * Backpressure and load shedding
 * Concurrency
     * Scheduler
@@ -21,10 +21,3 @@
 * Error Handling
 * Timer
 * Subject
-
-
-##### Legend:
-| Name        | Icone                     | 
-| ----------- | :-----------------------: |
-| In progress |   :small_blue_diamond:    |  
-| Done        |     :white_check_mark:    |        
