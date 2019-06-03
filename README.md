@@ -7,8 +7,7 @@
 
 | Concepts      | Details               | Status      |
 | --------      | :----:                | -----------:|
-| Observable contract |                 |             |
-|               | Create                | In progress |
+| Observable contract |                 |    Done     |
 | Operators     | Create                | In progress |
 |               | Reduce                | In progress |
 |               | Transform             | In progress |
