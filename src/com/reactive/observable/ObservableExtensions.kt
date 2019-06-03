@@ -21,6 +21,14 @@ fun <T> IObservable<T>.subscribe(onNext: (T) -> Unit, onError: (Exception) -> Un
     return this.subscribe(ObserverSubscribe.Create(onNext, onError, onComplete))
 }
 
+fun <T> MutableList<T>.toObservable(): IObservable<T>{
+        return ToObservableObservable(this)
+}
+
+fun <T> Collection<T>.toObservable(): IObservable<T>{
+    return ToObservableObservable(this)
+}
+
 class Stub {
 
     companion object {

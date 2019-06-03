@@ -23,6 +23,6 @@ abstract class OperatorObserverBase<TSource, TResult>: IObserver<TSource>, Dispo
 
     override fun dispose() {
         //TODO make it thread safe
-        observer = EmptyObserver.instance()
+        observer = EmptyObserver()
     }
 }
