@@ -5,6 +5,7 @@ import com.reactive.observers.IObserver
 import com.reactive.observable.operators.CreateObservable
 import com.reactive.observable.operators.DeferObservable
 import com.reactive.observable.operators.GenerateObservable
+import com.reactive.observable.operators.FromValueObservable
 
 class Observable {
     companion object {
@@ -22,6 +23,10 @@ class Observable {
 
         fun <T> defer(subscribe: () -> IObservable<T> ): IObservable<T>{
             return DeferObservable(subscribe)
+        }
+
+        fun <T> from(value: T): IObservable<T>{
+            return FromValueObservable(value)
         }
 
     }

@@ -45,11 +45,12 @@ class MergeObservable<T> : IObservable<T>
             val singleAssignment = SingleAssignmentDisposable()
             composites.add(singleAssignment)
 
-            val merge = Merge(this)
+            val merge = Merge(this, singleAssignment)
             singleAssignment.disposable = value.subscribe(merge)
         }
 
         override fun onComplete() {
+
             if(composites.count == 1){
                 try { observer.onComplete() } finally { dispose() }
             }
@@ -62,10 +63,12 @@ class MergeObservable<T> : IObservable<T>
         inner class Merge : OperatorObserverBase<T, T>{
 
             val parent: MergeOuterObserver
+            val cancel: Disposable
 
-            constructor(parent: MergeOuterObserver) : super(parent.observer)
+            constructor(parent: MergeOuterObserver, cancel: Disposable) : super(parent.observer)
             {
                 this.parent = parent
+                this.cancel = cancel
             }
 
             override fun onNext(value: T) {
@@ -74,9 +77,14 @@ class MergeObservable<T> : IObservable<T>
                 }
             }
 
-            override fun onComplete() {
-               parent.lock.withLock {
-                   try { observer.onComplete() } finally { dispose() }
+            override fun onComplete()
+            {
+                parent.composites.remove(cancel)
+                if (this.parent.composites.count == 0)
+                {
+                    parent.lock.withLock {
+                        try { observer.onComplete() } finally { dispose() }
+                    }
                }
             }
 

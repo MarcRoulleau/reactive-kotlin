@@ -29,7 +29,7 @@ fun <T> Collection<T>.toObservable(): IObservable<T>{
     return ToObservableObservable(this)
 }
 
-class Stub {
+class Stub<T> {
 
     companion object {
         //val _onNext: (Any) -> Unit get() = { println("_onNext called from Stub")}

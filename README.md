@@ -2,7 +2,7 @@
 
 :warning: *Educational project only. Should not be used in production* :warning:
 
-#### Concepts reimplemented in this project:
+#### Concepts:
 
 * Observable contract (*Done*)
 * Operators
@@ -21,3 +21,4 @@
 * Error Handling
 * Timer
 * Subject
+* Paradigm Transition
